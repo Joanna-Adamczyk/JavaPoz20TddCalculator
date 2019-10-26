@@ -21,22 +21,22 @@ public class CalculatorParamTestByConstr {
         this.result = result;
     }
 
-    @Parameterized.Parameters(name = "{index}: testAdd({0}+{1}) = {2}")
+    @Parameterized.Parameters(name = "{index}: testDiv({0}/{1}) = {2}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {1, 5, "6"},
-                {3, 6, "9"},
-                {1, 1, "2"}
+                {4, 2, "2"},
+                {8, 4, "2"},
+                {10, 0, "0"}
         });
     }
 
-    @Test
-    public void testAdd(){
-        CalculatorImpl calculator = new CalculatorImpl();
-        calculator.add(a, b);
+    //@Test
+    //public void testAdd(){
+        //CalculatorImpl calculator = new CalculatorImpl();
+        //calculator.add(a, b);
 
-        assertEquals(result, calculator.display());
-    }
+        //assertEquals(result, calculator.display());
+    //}
 
     //@Test
     //public void testSub() {
@@ -45,6 +45,18 @@ public class CalculatorParamTestByConstr {
 
         //assertEquals(result, calculator.display());
    //}
+
+    @Test
+    public void testMulti() {
+        CalculatorImpl calculator = new CalculatorImpl();
+        calculator.multi(a,b);
+    }
+
+    @Test
+    public void testDiv() {
+        Calculator calculator = new CalculatorImpl();
+        calculator.div(a,b);
+    }
 
 }
 

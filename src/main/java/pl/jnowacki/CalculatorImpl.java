@@ -22,13 +22,17 @@ public class CalculatorImpl implements Calculator {
 
     @Override
     public void sub(int numberA, int numberB) {
-
+        int result = numberA - numberB;
+        display = String.valueOf(result);
     }
 
     @Override
     public void div(int numberA, int numberB) throws IllegalArgumentException {
-
-    }
+        if (numberB == 0)
+            throw new IllegalArgumentException("Druga liczba równa zero - nie można wykonać działania.");
+        int result = numberA / numberB;
+        display = String.valueOf(result);
+        }
 
     @Override
     public void clear() {
@@ -36,7 +40,8 @@ public class CalculatorImpl implements Calculator {
     }
 
     @Override
-    public void multi(int numberA, int numberB) {
-
+    public void multi(int numberA, int numberB)     {
+        int result = numberA * numberB;
+        display = String.valueOf(display);
     }
 }
