@@ -21,8 +21,8 @@ public interface Calculator {
      */
     public String display();
 
-    /**
-     * Metoda dodaje numberA do numberB
+   /**
+    * Metoda dodaje numberA do numberB
      * @param numberA pierwsza liczba
      * @param numberB druga liczba
      */
