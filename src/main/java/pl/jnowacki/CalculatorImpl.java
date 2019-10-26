@@ -1,19 +1,23 @@
 package pl.jnowacki;
 
 public class CalculatorImpl implements Calculator {
+    private String display = "";
+
     @Override
     public void pressNumber(Object number) {
-
+        StringBuilder builder = new StringBuilder(display);
+        display = builder.append(number).toString();
     }
 
     @Override
     public String display() {
-        return null;
+        return display;
     }
 
     @Override
     public void add(int numberA, int numberB) {
-
+        int result = numberA + numberB;
+        display = String.valueOf(result);
     }
 
     @Override
@@ -28,7 +32,7 @@ public class CalculatorImpl implements Calculator {
 
     @Override
     public void clear() {
-
+        display = "";
     }
 
     @Override
