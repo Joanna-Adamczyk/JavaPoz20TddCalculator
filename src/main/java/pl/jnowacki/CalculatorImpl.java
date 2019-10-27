@@ -1,6 +1,7 @@
 package pl.jnowacki;
 
 public class CalculatorImpl implements Calculator {
+
     private String display = "";
 
     @Override
@@ -28,11 +29,13 @@ public class CalculatorImpl implements Calculator {
 
     @Override
     public void div(int numberA, int numberB) throws IllegalArgumentException {
-        if (numberB == 0)
-            throw new IllegalArgumentException("Druga liczba równa zero - nie można wykonać działania.");
-        int result = numberA / numberB;
-        display = String.valueOf(result);
+        if(numberB == 0) {
+            throw new IllegalArgumentException("Nie dziel przez zero");
         }
+
+        clear();
+        pressNumber(numberA/numberB);
+    }
 
     @Override
     public void clear() {
@@ -40,8 +43,7 @@ public class CalculatorImpl implements Calculator {
     }
 
     @Override
-    public void multi(int numberA, int numberB)     {
-        int result = numberA * numberB;
-        display = String.valueOf(display);
+    public void multi(int numberA, int numberB) {
+
     }
 }

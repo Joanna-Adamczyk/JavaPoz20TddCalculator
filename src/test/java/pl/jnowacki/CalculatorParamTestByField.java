@@ -8,20 +8,18 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
 
 @RunWith(value = Parameterized.class)
-public class CalculatorParamTestByConstr {
+public class CalculatorParamTestByField {
 
-    private int a;
-    private int b;
-    private String result;
+    @Parameterized.Parameter(value = 0)
+    public int a;
 
-    public CalculatorParamTestByConstr(int a, int b, String result) {
-        this.a = a;
-        this.b = b;
-        this.result = result;
-    }
+    @Parameterized.Parameter(value = 1)
+    public int b;
+
+    @Parameterized.Parameter(value = 2)
+    public String result;
 
     @Parameterized.Parameters(name = "{index}: testAdd({0}+{1}) = {2}")
     public static Collection<Object[]> data() {
